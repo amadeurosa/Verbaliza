@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP Verbaliza - Para Flávia e Paciente</title>
+    <style>
+        
+        .phone {
+            width: 360px; 
+            height: 640px; 
+            border: 2px solid #000;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 50px auto; 
+            position: relative;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: #fff; 
+            overflow: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Estilos para o logo */
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 80%; 
+            max-width: 280px; 
+            margin-top: 20px; 
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* seções */
+        .section {
+            width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .image-item {
+            width: 48%;
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-item img {
+            width: 130px; 
+            height: 130px; 
+            object-fit: cover; 
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .image-description {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            bottom: 0; 
+            width: 100%; 
+            box-sizing: border-box; 
+            text-align: center; 
+            transition: opacity 0.3s ease-in-out; 
+            opacity: 0; 
+        }
+
+        .image-label {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .image-item:hover .image-label {
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="phone">
+        <div class="screen" id="display">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="imagens/header_logo.jpg" alt="Logo do seu aplicativo">
+            </div>
+
+            <!-- Seção: Ações -->
+            <div class="section">
+                <div class="section-title">Ações</div>
+                <div class="image-grid">
+                    <div class="image-item">
+                        <span class="image-label">Comer</span>
+                        <img src="imagens/comer.jpeg" alt="Comer" data-audio="audios/comer.mp3">
+                        <p class="image-description">Comer</p>
+                    </div>
+                    <div class="image-item">
+                        <span class="image-label">Água</span>
+                        <img src="imagens/agua.jpeg" alt="Água" data-audio="audios/agua.mp3">
+                        <p class="image-description">Beber água</p>
+                    </div>
+                    <div class="image-item">
+                        <span class="image-label">Banheiro</span>
+                        <img src="imagens/banheiro.jpeg" alt="Banheiro" data-audio="audios/banheiro.mp3">
+                        <p class="image-description">Banheiro</p>
+                    </div>
+                    <div class="image-item">
+                        <span class="image-label">Escovar os dentes</span>
+                        <img src="imagens/dentes.jpeg" alt="escovar os dentes" data-audio="audios/dentes.mp3">
+                        <p class="image-description">Escovar os dentes</p>
+                    </div>
+                </div>
+            </div>
+
+                        <!-- Seção: Brincadeira -->
+                        <div class="section">
+                            <div class="section-title">Brincadeira</div>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <span class="image-label">Escorregador</span>
+                                    <img src="imagens/escoregador.png" alt="Escorregador" data-audio="audios/escorregador.mp3">
+                                    <p class="image-description">Escorregador</p>
+                                </div>
+                                <div class="image-item">
+                                    <span class="image-label">Balanço</span>
+                                    <img src="imagens/balanco.jpeg" alt="Balanço" data-audio="audios/balanco.mp3">
+                                    <p class="image-description">Balanço</p>
+                                </div>
+                                <div class="image-item">
+                                    <span class="image-label">Bola</span>
+                                    <img src="imagens/bola.jpeg" alt="Bola" data-audio="audios/bola.mp3">
+                                    <p class="image-description">Bola</p>
+                                </div>
+                                <div class="image-item">
+                                    <span class="image-label">Vídeo Game</span>
+                                    <img src="imagens/videogame.jpeg" alt="Jorgar Vídeo Game" data-audio="audios/videogame.mp3">
+                                    <p class="image-description">Jogar vídeo Game</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Seção: Sentimentos -->
+                        <div class="section">
+                            <div class="section-title">Sentimentos</div>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <span class="image-label">Sono</span>
+                                    <img src="imagens/sono.png" alt="Sono" data-audio="audios/sono.mp3">
+                                    <p class="image-description">Sono</p>
+                                </div>
+                                <div class="image-item">
+                                    <span class="image-label">Dor</span>
+                                    <img src="imagens/doendo.jpeg" alt="Doendo" data-audio="audios/dor.mp3">
+                                    <p class="image-description">Doendo</p>
+                                </div>
+                                <div class="image-item">
+                                    <span class="image-label">Frio</span>
+                                    <img src="imagens/frio.jpeg" alt="frio" data-audio="audios/frio.mp3">
+                                    <p class="image-description">Frio</p>
+                                </div>
+                                <div class="image-item">
+                                    <span class="image-label">Calor</span>
+                                    <img src="imagens/calor.jpeg" alt="Calor" data-audio="audios/calor.mp3">
+                                    <p class="image-description">Calor</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Seção: Pessoas -->
+                        <div class="section">
+                            <div class="section-title">Pessoas</div>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <span class="image-label">Mãe</span>
+                                    <img src="imagens/mae.jpeg" alt="Mãe" data-audio="audios/mae.mp3">
+                                    <p class="image-description">Mãe</p>
+                                </div>
+                                <div class="image-item">
+                                    <span class="image-label">Pai</span>
+                                    <img src="imagens/pai.jpeg" alt="Pai" data-audio="audios/pai.mp3">
+                                    <p class="image-description">Pai</p>
+                                </div>
+                                <div class="image-item">
+                                    <span class="image-label">Vovó</span>
+                                    <img src="imagens/avo.jpeg" alt="Vovó" data-audio="audios/avo.mp3">
+                                    <p class="image-description">Vovó</p>
+                                </div>
+                                <div class="image-item">
+                                    <span class="image-label">Tia Ká</span>
+                                    <img src="imagens/tiaka.jpg" alt="Tia Ká" data-audio="audios/tiaka.mp3">
+                                    <p class="image-description">Tia Ká</p>
+                                </div>
+                            </div>
+                        </div>            
+
+            <!-- Reproducao do audio -->
+            <script>
+                document.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'IMG') {
+                        const audioSrc = e.target.getAttribute('data-audio');
+                        if (audioSrc) {
+                            const audio = new Audio(audioSrc);
+                            audio.play();
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>
